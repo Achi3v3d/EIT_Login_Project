@@ -38,6 +38,11 @@ class MainActivity2 : AppCompatActivity() {
             Log.d("Text_changed", "ITS LISTEed")
             if(binding.editTextNumberPassword3.text.length <8 && isValidPassword(binding.editTextNumberPassword3.text.toString() )){
                 binding.imageView5.alpha = 1F
+
+
+                while (binding.editTextNumberPassword3.text.toString() == binding.editTextNumberPassword4.text.toString()){
+
+                }
             }
             else{
                 Toast.makeText(applicationContext, "Password does not meet conditions", Toast.LENGTH_SHORT)
