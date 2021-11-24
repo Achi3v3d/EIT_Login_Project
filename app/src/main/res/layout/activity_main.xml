@@ -72,7 +72,7 @@
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logogreenflagx" />
+        app:srcCompat="@drawable/logoflag" />
 
     <ImageView
         android:id="@+id/imageView2"
