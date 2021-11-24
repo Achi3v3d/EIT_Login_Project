@@ -36,7 +36,7 @@ class MainActivity2 : AppCompatActivity() {
     private val textWatcher = object : TextWatcher {
         override fun afterTextChanged(s: Editable?) {
             Log.d("Text_changed", "ITS LISTEed")
-            if(binding.editTextNumberPassword3.text.length <8 && isValidPassword(binding.editTextNumberPassword3.text.toString())){
+            if(binding.editTextNumberPassword3.text.length <8 && isValidPassword(binding.editTextNumberPassword3.text.toString() )){
                 binding.imageView5.alpha = 1F
             }
             else{
