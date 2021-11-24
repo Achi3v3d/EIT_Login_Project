@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_green_flagx" />
+        app:srcCompat="@drawable/logoGreenFlagx" />
 
     <Button
         android:id="@+id/button"
@@ -26,5 +26,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/gradient_button_backgroundx"/>
+        android:background="@drawable/gradientbuttonbackground"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
