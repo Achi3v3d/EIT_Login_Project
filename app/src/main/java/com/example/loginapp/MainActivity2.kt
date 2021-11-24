@@ -2,6 +2,11 @@ package com.example.loginapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
+import android.widget.Toast
+import android.widget.TextView
 import com.example.loginapp.databinding.ActivityMain2Binding
 import com.example.loginapp.databinding.ActivityMainBinding
 import java.util.regex.Matcher
@@ -18,12 +23,35 @@ class MainActivity2 : AppCompatActivity() {
 
     override fun onResume() {
     super.onResume()
+
+        binding.editTextNumberPassword3.addTextChangedListener(textWatcher)
     }
-    fun isValidPassword(password: String?): Boolean {
+    private fun isValidPassword(password: String?): Boolean {
         val pattern: Pattern
-        val PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$"
+        val PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=\\S+$).{4,}$"
         pattern = Pattern.compile(PASSWORD_PATTERN)
         val matcher: Matcher = pattern.matcher(password)
         return matcher.matches()
+    }
+    private val textWatcher = object : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+            Log.d("Text_changed", "ITS LISTEed")
+            if(binding.editTextNumberPassword3.text.length <8 && isValidPassword(binding.editTextNumberPassword3.text.toString())){
+                binding.imageView5.alpha = 1F
+            }
+            else{
+                Toast.makeText(applicationContext, "Password does not meet conditions", Toast.LENGTH_SHORT)
+                Log.d("Text_Legnth", binding.editTextNumberPassword3.text.toString())
+            }
+        }
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            Log.d("Text_change", "ITS LISTENING")
+
+        }
+    }
+    companion object{
+
     }
 }

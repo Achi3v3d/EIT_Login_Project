@@ -13,7 +13,7 @@
         android:layout_height="53dp"
         android:background="@color/white"
         android:ems="10"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.546"
@@ -70,7 +70,6 @@
         android:clickable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/gradientbuttonbackground" />
 
@@ -133,7 +132,7 @@ one number, one uppercase and one lowercase letter. Ypu can use Special Characte
         android:layout_height="53dp"
         android:background="@color/white"
         android:ems="10"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.546"
