@@ -42,7 +42,7 @@ class MainActivity2 : AppCompatActivity() {
         val sharedPreferences = baseContext.getSharedPreferences("MY_SHARED_PREFS", MODE_PRIVATE)
         val editor = sharedPreferences.edit().apply(){
             putString(binding.editTextEmail.text.toString(), "Email")
-        }
+        }.apply()
     }
     }
     private fun isValidPassword(password: String?): Boolean {
@@ -92,12 +92,7 @@ class MainActivity2 : AppCompatActivity() {
                     binding.CPG.visibility = View.INVISIBLE
                     binding.RPG.visibility = View.INVISIBLE
 
-                    /*if(binding.createPassword.text.toString() == ""){
-                    binding.CPR.visibility = View.VISIBLE
-                    binding.RPR.visibility = View.VISIBLE
-                    binding.CPG.visibility = View.INVISIBLE
-                    binding.RPG.visibility = View.INVISIBLE
-                }*/
+
                     binding.imageView5.alpha = .4F
                     Log.d("Text_Legnth", binding.repeatPassword.text.toString())
                 }
@@ -124,21 +119,22 @@ class MainActivity2 : AppCompatActivity() {
                 binding.WarningTextPass.visibility = View.INVISIBLE
 
                 val sharedPreferences = baseContext.getSharedPreferences("MY_SHARED_PREFS", MODE_PRIVATE)
-                val keys: Map<String, *> = sharedPreferences.getAll()
-                var counter = 0
-                for ((key, value) in keys) {
-                    if (key == binding.editTextEmail.text.toString()) {
-                        counter++
+                val em_mail = sharedPreferences.getString(binding.editTextEmail.text.toString(),"NOT_EXIST")
+
+
+                    if (em_mail == "NOT_EXIST") {
+                        CLK = 1
+
+                    }
+                else{
+                        binding.ER.visibility = View.VISIBLE
+                        binding.EG.visibility = View.INVISIBLE
                         binding.WarningBoarder.visibility = View.VISIBLE
                         binding.WarningTextEmail.visibility = View.VISIBLE
                         binding.redCross.visibility = View.VISIBLE
                         binding.WarningTextPass.visibility = View.INVISIBLE
                     }
-                }
-                if (counter == 0){
-                    CLK = 1
 
-                }
             }
             else{
                 binding.ER.visibility = View.VISIBLE

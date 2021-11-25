@@ -265,12 +265,12 @@ one number, one uppercase and one lowercase letter. Ypu can use Special Characte
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/WarningTextEmail"
+        android:id="@+id/WarningTextPass"
         android:layout_width="261dp"
         android:layout_height="74dp"
         android:layout_marginBottom="12dp"
         android:background="#000000"
-        android:text=".      Passwords Invalid Or              don't Match "
+        android:text=".      Email is Invalid Or              In use "
         android:textColor="#F40000"
         android:textSize="20sp"
         android:visibility="invisible"
@@ -280,12 +280,12 @@ one number, one uppercase and one lowercase letter. Ypu can use Special Characte
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/WarningTextPass"
+        android:id="@+id/WarningTextEmail"
         android:layout_width="261dp"
         android:layout_height="74dp"
         android:layout_marginBottom="12dp"
         android:background="#000000"
-        android:text=".      Email is Invalid Or              In use "
+        android:text=".      Passwords Invalid Or              don't Match "
         android:textColor="#F40000"
         android:textSize="20sp"
         android:visibility="invisible"
